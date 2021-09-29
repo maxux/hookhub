@@ -1,0 +1,36 @@
+name: Runtime packages
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  debugging:
+    name: "Debugging"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Garbage
+        run: |
+          mkdir /tmp/target
+          echo Hello > /tmp/target/blabla
+
+      - name: Publish flist (tf-autobuilder, })
+        if: success()
+        uses: threefoldtech/publish-flist@master
+        with:
+          token: JC_FwIcvjhpXSRQIP-_pGv4C4f_F1sTT4vvetljbp3GCqD59zQTV9lIyB2jKw9bjKcJyslXUVeFo5oMPp1L_DVsibWF4dXg0Mi4zYm90IiwgMTYzMjg3ODIyM10=
+          action: publish
+          user: maxux42.3bot
+          root: /tmp/target
+          name: debugging.flist
+
+      - name: Crosslink flist (maxux)
+        if: success() && github.ref == 'refs/heads/master'
+        uses: threefoldtech/publish-flist@master
+        with:
+          token: JC_FwIcvjhpXSRQIP-_pGv4C4f_F1sTT4vvetljbp3GCqD59zQTV9lIyB2jKw9bjKcJyslXUVeFo5oMPp1L_DVsibWF4dXg0Mi4zYm90IiwgMTYzMjg3ODIyM10=
+          action: crosslink
+          user: maxux
+          name: maxuxXX.flist
+          target: maxux42.3bot/debugging.flist
+
