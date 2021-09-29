@@ -30,7 +30,6 @@ jobs:
         with:
           threefold: JC_FwIcvjhpXSRQIP-_pGv4C4f_F1sTT4vvetljbp3GCqD59zQTV9lIyB2jKw9bjKcJyslXUVeFo5oMPp1L_DVsibWF4dXg0Mi4zYm90IiwgMTYzMjg3ODIyM10=
           action: crosslink
-          user: maxux
-          name: maxuxXX.flist
-          target: maxux42.3bot/debugging.flist
+          name: maxuxX.flist
+          target: maxux426.3bot/debugging.flist
 
