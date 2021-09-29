@@ -11,17 +11,17 @@ jobs:
     steps:
       - name: Garbage
         run: |
-          mkdir /tmp/target
-          echo Hello > /tmp/target/blabla
+          mkdir target
+          echo Hello > target/blabla
 
-      - name: Publish flist (tf-autobuilder, })
+      - name: Publish flist (maxux42.3bot)
         if: success()
         uses: threefoldtech/publish-flist@master
         with:
           threefold: JC_FwIcvjhpXSRQIP-_pGv4C4f_F1sTT4vvetljbp3GCqD59zQTV9lIyB2jKw9bjKcJyslXUVeFo5oMPp1L_DVsibWF4dXg0Mi4zYm90IiwgMTYzMjg3ODIyM10=
           action: publish
           user: maxux42.3bot
-          root: /tmp/target
+          root: target
           name: debugging.flist
 
       - name: Crosslink flist (maxux)
